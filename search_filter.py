@@ -1,5 +1,5 @@
 # Created by: Justin Sliech
-# Created On: 11/15/2026
+# Created on: 11/15/2026
 # Description: Provides functions for searching, filtering, and sorting collections of data.
 
 def search_data(data, search_term):

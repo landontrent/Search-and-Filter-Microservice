@@ -1,3 +1,9 @@
+# Created by: Justin Sliech
+# Created on: 11/15/2026
+# Description: Provides a Flask API for searching, filtering, and sorting data.
+
+
+
 from flask import Flask, request, jsonify
 from search_filter import search_data, filter_data, sort_data
 
@@ -12,6 +18,18 @@ def search_records():
 
     if "data" not in data:
         return jsonify({"error": "Missing required field: data"}), 400
+
+    if not isinstance(data["data"], list):
+        return jsonify({"error": "Data must be a list"}), 400
+
+    if not isinstance(data.get("search_term", ""), str):
+        return jsonify({"error": "Search term must be a string"}), 400
+
+    if not isinstance(data.get("filters", {}), dict):
+        return jsonify({"error": "Filters must be a dictionary"}), 400
+
+    if "sort_by" in data and not isinstance(data["sort_by"], str):
+        return jsonify({"error": "Sort field must be a string"}), 400
 
     try:
         results = data["data"]
