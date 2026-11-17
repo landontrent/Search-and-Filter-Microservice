@@ -1,5 +1,5 @@
 # Search-and-Filter-Microservice
-Description
+# Description
 
 The Search and Filter Microservice is a Flask-based API that allows applications to search, filter, and sort records contained within a dataset. The microservice receives data through an HTTP POST request, validates the request contents, processes the records according to the provided search criteria, and returns the results as JSON.
 
@@ -9,9 +9,9 @@ Searching records using a keyword or search term
 Filtering records based on specified field values
 Sorting returned records by a selected field in ascending or descending order
 
-This microservice is useful because it centralizes search and filtering functionality so multiple applications can reuse the same service without implementing their own search logic. Changes and improvements can be made to the microservice independently without modifying the applications that use it.
+This microservice is useful because it centralizes search and filtering functions, so multiple applications can reuse the same service without implementing their own search. Changes and improvements can be made to the microservice independently without modifying the applications that use it.
 
-Requirements
+# Requirements
 
 The following software and libraries are required:
 
@@ -24,7 +24,8 @@ The microservice imports the following functions from search_filter.py:
 
 Python
 from search_filter import search_data, filter_data, sort_data
-Installation
+
+# Installation
 
 Install Flask using pip:
 
@@ -36,7 +37,8 @@ Ensure that the following files are located in the same project directory:
 Plain Text
 app.py
 search_filter.py
-Communication Contract
+
+# Communication Contract
 
 The microservice communicates using:
 
@@ -49,7 +51,8 @@ Full endpoint:
 
 Plain Text
 http://localhost:5001/search
-Requesting Data
+
+# Requesting Data
 
 Another program can communicate with the microservice by sending an HTTP POST request to:
 
@@ -84,7 +87,8 @@ JSON
 "sort_by": "price",
 "order": "ascending"
 }
-Example Request Using Python
+
+# Example Request Using Python
 Python
 import requests
  
@@ -115,7 +119,7 @@ response = requests.post(url, json=data)
 
 The requesting application sends a JSON payload to the /search endpoint using the POST method.
 
-Receiving Data
+# Receiving Data
 
 After the request is processed, the microservice returns a JSON response containing the matching records and the total number of results.
 
@@ -141,7 +145,8 @@ JSON
 ],
 "total": 1
 }
-Response Status Codes
+
+# Response Status Codes
 Status Code	Meaning
 200	Search, filtering, and sorting completed successfully.
 400	Invalid request data, missing required fields, incorrect data types, or processing error.
@@ -167,7 +172,8 @@ JSON
 {
 "error": "Search term must be a string"
 }
-How to Run the Microservice
+
+# How to Run the Microservice
 
 Verify that Python 3 is installed.
 
@@ -197,9 +203,9 @@ http://localhost:5001
 
 Keep this terminal running while client applications send requests to the service.
 
-How to Test the Microservice
+# How to Test the Microservice
 
-The microservice can be tested using Postman, Python scripts, or automated unit tests.
+The microservice can be tested using Python scripts or automated unit tests.
 
 Manual Test Using Python
 Python
