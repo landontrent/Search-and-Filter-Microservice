@@ -222,6 +222,10 @@ json={
 "filters": {"category": "IT"},
 "sort_by": "price",
 "order": "ascending"
+
+# UML Image
+<img width="571" height="817" alt="2" src="https://github.com/user-attachments/assets/35a5b376-c1cb-4c62-a919-b4afd3e505bc" />
+
 }
 )
  
